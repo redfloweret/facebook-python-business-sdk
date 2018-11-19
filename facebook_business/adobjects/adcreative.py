@@ -455,6 +455,11 @@ class AdCreative(
         'mockup_id': 'string',
         'page_id': 'string',
     }
+    
+    def _setitem_trigger(self, key, value):
+        if key == 'id':
+            self._data['creative_id'] = self['id']
+
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
@@ -468,8 +473,3 @@ class AdCreative(
         field_enum_info['DynamicAdVoice'] = AdCreative.DynamicAdVoice.__dict__.values()
         field_enum_info['Operator'] = AdCreative.Operator.__dict__.values()
         return field_enum_info
-
-
-def _setitem_trigger(self, key, value):
-    if key == 'id':
-        self._data['creative_id'] = self['id']
