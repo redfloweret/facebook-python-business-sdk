@@ -470,6 +470,6 @@ class AdCreative(
         return field_enum_info
 
 
-def _setitem_trigger(self, key, value):
-    if key == 'id':
-        self._data['creative_id'] = self['id']
+    def _setitem_trigger(self, key, value):
+        if key == 'id':
+            self._data['creative_id'] = self['id']
